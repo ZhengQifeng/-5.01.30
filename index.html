@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fileinput.min.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="fileinput.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body>
+	<form enctype="multipart/form-data">
+		<input id="file" type="file" name="image" size="50" multiple/>
+		<br />
+	</form>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var control = $('#' + "file");   
+	        control.fileinput({  
+	            showUpload: true, //是否显示上传按钮  
+	            uploadUrl: "/upfile",
+	            showRemove:true,  
+	            dropZoneEnabled: true,  
+	            showCaption: true,//是否显示标题  
+	            maxFileSize : 2000,   
+	            maxFileCount: 10,
+	        });
+		});
+	</script>
+</body>
+</html>
